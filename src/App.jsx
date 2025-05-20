@@ -4,7 +4,7 @@ import HomePage from "./pages/HomePage.jsx";
 import NavBar from "./components/Nav/NavBar.jsx";
 import DashboardPage from './pages/DashboardPage.jsx'
 import AuthPage from "./pages/AuthPage.jsx";
-import CreatePage from "./pages/CreatePage.jsx";
+import CreateForm from "./pages/CreateForm.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
@@ -17,7 +17,7 @@ function App() {
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/product/:id" element={<ProductPage />} />
-        <Route path="/create" element={<CreatePage />} />
+        <Route path="/create" element={<CreateForm />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
