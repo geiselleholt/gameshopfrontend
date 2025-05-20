@@ -7,20 +7,37 @@ export default function HomePage() {
   async function getGames() {
     try {
       let res = await axios.get("http://localhost:3000/api/game");
-// console.log(res.data)
       setGames(res.data);
     } catch (err) {
       console.error(err);
     }
   }
 
+  //Alternative arrow function version:
+  //   let getGames = async () => {
+  //       let res = await axios("http://localhost:3000/api/game");
+  //       setGames(res.data)
+  //   };
+
   useEffect(() => {
-      getGames();
+    getGames();
   }, []);
 
-  return (
-    <>
-      <h1>Home Page</h1>
-    </>
-  );
+  const loaded = () => {
+    return games.map((game) => {
+      return (
+        <div>
+          <h3>{game.title}</h3>
+          <p>$ {game.price}</p>
+          <p>Description: {game.desc}</p>
+        </div>
+      );
+    });
+  };
+
+  const loading = () => {
+    return <h1>Loading Data</h1>;
+  };
+
+  return games ? loaded() : loading();
 }
