@@ -8,3 +8,32 @@ body {
   background-color: tan;
 }
 
+#create {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+}
+
+label {
+  color: brown;
+  margin: 5px;
+  font-weight: bold;
+}
+
+#submit {
+  width: 20%;
+  margin: auto;
+  background-color: darkolivegreen;
+  color: wheat;
+  font-size: medium;
+}
+
+button {
+  width: 20%;
+  margin: auto;
+  background-color: brown;
+  color: wheat;
+  font-size: medium;
+}
